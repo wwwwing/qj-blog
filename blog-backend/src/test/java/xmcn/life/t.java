@@ -7,7 +7,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import xcmn.life.config.RedisService;
+
 import java.sql.SQLException;
+import java.util.Set;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = BlogBackendApplication.class)
@@ -15,6 +18,9 @@ public class t {
 
     @Autowired
     private DruidDataSource druidDataSource;
+    @Autowired
+    private RedisService redisService;
+
 
     @Test
     public void dbTest() throws SQLException {
@@ -26,5 +32,10 @@ public class t {
         connection.close();
     }
 
+    @Test
+    public void redisTest(){
+        Set<String> keys = redisService.getTemplate().keys("*");
+        System.out.println(keys);
+    }
 
 }

@@ -21,11 +21,20 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>xmcn.life</groupId>
+            <artifactId>blog-service</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.6</version>
         </dependency>
     </dependencies>
 
